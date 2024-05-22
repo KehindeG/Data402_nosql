@@ -22,7 +22,7 @@ modern applications.
 
 
 #### What language(s) can be used?
-Any language!
+Any language!!
 
 #### Example NoSQL Schema design
 
@@ -114,7 +114,7 @@ MongoDB uses sharding to support deployments with very large data sets and high 
 <br>
 
 #### What scenarios is MongoDB good for?
-
+what is mongodb good for?
 
 #### What scenarios is it not good for?
  
