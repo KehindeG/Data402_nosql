@@ -20,8 +20,6 @@ modern applications.
 | Uses SQL (Structured Query Language)         | Uses any language                                                      | 
 | Vertically scalable (scaling-in)             | Scales horizontally (scaling-out)                                                   | 
 
-SQLand uses SQL (Structured Query Language) for querying and managing data, 
-NoSQL databases employ various data models for accessing and managing data, eg, documents, key,value, graphs etc.
 
 #### What language(s) can be used?
 Any language!
