@@ -4,13 +4,14 @@ Exploring simple commands using examples:
 
 Un-normalised- use embedding
 
+#### Creating a database
+`use sparta`
+
 #### Creating a collection called academy:
 `db.createCollection("academy")`
 
-test> use sparta
-
 #### Inserting one document
-`db.academy.insertOne({... “name”: “Kehinde”...})`
+`db.academy.insertOne({“name”: “Kehinde”})`
 
 #### Inserting many documents
 `db.academy.insertMany([{ “firstname”: “Kehinde”, “lastname”:”Giwa”, “Stream”: “Data 402”}])`
@@ -29,10 +30,10 @@ For many- to-many relationships
 #### Clearing the screen
 `Cls` 
 
-Create new collection in sparta database called students:
-db.createCollection("students")
+#### Creating a new collection in sparta database called students:
+`db.createCollection("students")`
 
-
+#### Setting validation rules
 ```
 {
       $jsonSchema: {
@@ -67,3 +68,31 @@ or
 
 
 
+### Exercise 1:
+create database
+`use sparta`
+
+create collection
+`db.createCollection("favouriteFilms")`
+
+setting validation rules
+With validation action as 'Error' and validation level as 'strict'
+
+```
+{
+    $jsonSchema: {
+    bsonType: 'object',
+    required: [
+        'title',
+        'year',
+        'genre'
+        ]
+    }
+}
+```
+
+Inserting one
+`db.favouriteFilms.insertOne({title: "Jurassic World", year: "2022", genre: "Sci-Fi"})`
+
+Inserting many
+`db.academy.insertMany([{ “title”: “Dune Part 2”, “year”: ”2024”, “genre”: “Sci-Fi”}, {"title": "Spider-Man: Across the Spider-Verse", "year": "2023", "genre": "Action" }])`
