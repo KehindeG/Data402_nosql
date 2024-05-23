@@ -1,94 +1,69 @@
 # MongoDB
 
+Exploring simple commands using examples:
+
 Un-normalised- use embedding
 
-db.createCollection("academy")
-{ ok: 1 }
-
+#### Creating a collection called academy:
+`db.createCollection("academy")`
 
 test> use sparta
 
-db.academy.insertOne({... “name”: “Luke”...})
+#### Inserting one document
+`db.academy.insertOne({... “name”: “Kehinde”...})`
 
-db.academy.insertMany([{“course”:”Data Engineering”, “length”:10}, {“course”:”Data Analysis”, “Length”:8}])
+#### Inserting many documents
+`db.academy.insertMany([{ “firstname”: “Kehinde”, “lastname”:”Giwa”, “Stream”: “Data 402”}])`
 
+#### Inserting many documents with an embedded document
+`db.academy.insertMany([{“course”:”Data Engineering”, “length”:10}, {“course”:”Data Analysis”, “Length”:8}])`
 
-(Connect compass> new connection with connection string)
-
-db.academy.insertMany([{ “firstname”: “Kehinde”, “lastname”:”Giwa”, “Stream”: “Data 402”}])
-
-
-
-Embedding……
-In mongosh
-db.academy.insertOne({name: "Luke", course: "Data", trainer: {name: "Paula", expertise: "Data"}})
+#### Inserting one document with an embedded document
+`db.academy.insertOne({name: "Luke", course: "Data", trainer: {name: "Paula", expertise: "Data"}})`
 
 
 Normalised— use referencing
-REference  object id of the document
-
+Reference object id of the document
 For many- to-many relationships
-(Clear screen)
-Cls 
+
+#### Clearing the screen
+`Cls` 
 
 Create new collection in sparta database called students:
 db.createCollection("students")
-{ ok: 1 }
 
-(go to validation)
-(add validation rules)
-(click add rule)
-(validation action: Error, validation level: Strict)
-(adding a simple schema)
 
-[14:29] Luke Fairbrass
+```
 {
-
       $jsonSchema: {
-
          bsonType: "object",
-
          required: [ "name", "course" ],
-
       }
-
    }
+```
 
+#### Getting collection information
+`db.getCollectionInfos`
 
-db.getCollectionInfos
-
-db.students.insertOne({name: “Mr S.Global”, year: NumberInt(2024), score: 88.2, address: {city:”Birmingham”}, course; “Data”})
-
-Cls
-
-
-(retrieving docs)
-
-show collections
+#### Retrieving documents
+`show collections`
 or
-db.getCollectionNames()
+`db.getCollectionNames()`
 
-(Returning all docs from a collection)
+#### Returning all documents from a collection
+`db.students.find({})`
 
-db.students.find({})
+#### Updating a document
+`db.students.updateOne({name: “Mr s. Global”}, {$set:{score: 92.5, newfield: true}})`
 
-(updating a doc)
+#### Removing a field
+`db.students.updateOne({name: “Mr S. Global”}, {$unset: {newField: null}})`
 
-db.students.updateOne({name: “Mr s. Global”}, {$set:{score: 92.5, newfield: true}})
+#### Updating many
+`db.students.updateMany({}, {$set: {year: NumberInt(2025)} })`
 
-(removing a field)
-
-db.students.updateOne({name: “Mr S. Global”}, {$unset: {newField: null}})
-
-(Updating many)
-
-db.students.updateMany({}, {$set: {year: NumberInt(2025)} })
-
-(deleting a doc)
-
-db.students.deleteOne({name: “Mr S. Global”})
-
-Install mongodb database tools
+#### Deleting a document
+`db.students.deleteOne({name: “Mr S. Global”})`
 
 
 
